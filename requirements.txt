@@ -1,0 +1,8 @@
+feedparser
+google-generativeai
+python-dotenv
+beautifulsoup4
+requests
+scikit-learn
+numpy
+python-dateutil
