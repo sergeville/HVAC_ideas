@@ -26,6 +26,7 @@ build/
 # Environment files
 .env
 .env.local
+.env.diagnostic
 
 # OS files
 .DS_Store
