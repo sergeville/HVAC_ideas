@@ -1,0 +1,69 @@
+# Example HVAC Questions
+
+## General Questions
+- How does a heat pump work?
+- What is a SEER rating?
+- What's the difference between a furnace and a boiler?
+- How much does it cost to install central air conditioning?
+- What size HVAC system do I need for my home?
+- Should I get a programmable thermostat?
+- What's the best temperature to set my thermostat in winter/summer?
+- How long should an HVAC system last?
+
+## Troubleshooting Questions
+- My AC is running but not cooling
+- Furnace won't turn on
+- Thermostat display is blank
+- Strange smell coming from vents
+- Ice buildup on outdoor AC unit
+- Loud banging noise from furnace
+- Uneven temperatures in different rooms
+- AC keeps tripping the circuit breaker
+- Furnace pilot light won't stay lit
+- Water leaking from AC unit
+
+## Maintenance Questions
+- How often should I change my HVAC filter?
+- What maintenance can I do myself?
+- How do I clean my AC coils?
+- When should I schedule professional maintenance?
+- How to prepare my HVAC for winter/summer?
+- What are signs my HVAC needs repair?
+- How do I check refrigerant levels?
+- Should I cover my outdoor AC unit in winter?
+
+## Installation & Upgrade Questions
+- Can I install a smart thermostat myself?
+- What's involved in replacing an HVAC system?
+- Ductless mini-split vs central air?
+- Best HVAC brands for reliability?
+- Should I upgrade to a two-stage furnace?
+- What's the ROI on a high-efficiency system?
+- Do I need permits for HVAC work?
+- Can I add zones to my existing system?
+
+## Energy Efficiency Questions
+- How can I reduce my HVAC energy costs?
+- What's the most energy-efficient heating system?
+- Should I upgrade to a variable-speed blower?
+- How much can I save with a programmable thermostat?
+- What are heat recovery ventilators?
+- Is it worth upgrading from 14 SEER to 18 SEER?
+- How do I improve my home's insulation for HVAC efficiency?
+
+## Air Quality Questions
+- How can I improve indoor air quality?
+- What's the difference between HEPA and regular filters?
+- Should I get a whole-house humidifier?
+- What causes poor air circulation?
+- Do I need an air purifier?
+- How to reduce dust in my home?
+- What's causing musty smell from AC?
+
+## Safety Questions
+- How do I know if I have a refrigerant leak?
+- What are signs of carbon monoxide from furnace?
+- Is it safe to run AC with a refrigerant leak?
+- How to shut off gas to furnace in emergency?
+- What to do if furnace smells like gas?
+- How often should I test carbon monoxide detector?
