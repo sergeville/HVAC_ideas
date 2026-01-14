@@ -292,6 +292,52 @@ Here's a step-by-step troubleshooting guide:
 - This setup: $0.00
 - Cloud AI APIs: $0.01-0.10+ per question
 
+## 🔗 Related Tools in This Repository
+
+This Virtual HVAC Technician is part of a larger collection of HVAC diagnostic tools. You may also be interested in:
+
+### Oil Tank & Fuel Pump Diagnostics ⛽
+
+If you're troubleshooting oil heating systems, fuel pumps, or tank transfer issues, check out these specialized diagnostic scripts in the parent directory:
+
+**Tank 1 Auto-Fill Diagnostics:**
+- `run_tank1_diagnostic.sh` - Interactive diagnostic for automatic fill systems
+- Helps troubleshoot float switches, control boxes, and fill automation
+
+**Tank 2 Transfer Pump Diagnostics:**
+- `run_tank2_diagnostic.sh` - Standard Tank 2 transfer pump diagnostic
+- `run_ai_tank2_diagnostic.sh` - AI-enhanced diagnostics for fuel transfer systems
+- Troubleshoots relay issues, electrical problems, and pump failures
+
+**General Oil Tank AI Assistant:**
+- `run_ai_diagnostic.sh` - General purpose oil tank diagnostic assistant
+- Interactive troubleshooting for fuel pump systems
+- Root cause analysis and solution recommendations
+
+**Documentation:**
+- [Tank Diagnostics Guide](../TANK_DIAGNOSTICS_GUIDE.md)
+- [AI Diagnostic README](../AI_DIAGNOSTIC_README.md)
+- [All Diagnostic Apps Overview](../ALL_DIAGNOSTIC_APPS.md)
+- [Tank 1 Auto Fill Guide (PDF)](../Tank1_Auto_Fill_Diagnostic_Guide.pdf)
+- [Oil Tank Transfer Troubleshooting (PDF)](../Oil_Tank_Transfer_Troubleshooting_Guide.pdf)
+
+### How to Access These Tools
+
+From the repository root (`/path/to/HVAC_ideas/`):
+
+```bash
+# Run Tank 1 diagnostics
+./run_tank1_diagnostic.sh
+
+# Run AI-enhanced Tank 2 diagnostics
+./run_ai_tank2_diagnostic.sh
+
+# General AI diagnostic assistant
+./run_ai_diagnostic.sh
+```
+
+**Note:** These tools use the same local AI setup (Ollama + CrewAI) so you don't need any additional configuration!
+
 ---
 
 **Need HVAC help? Your virtual technician is ready! 🔧**
