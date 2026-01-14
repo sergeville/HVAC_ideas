@@ -2,6 +2,21 @@
 
 An AI-powered HVAC expert assistant that answers all kinds of questions about heating, ventilation, and air conditioning systems.
 
+**🏠 100% LOCAL** - Runs entirely on your machine using Ollama (no internet, no API costs, completely free and private)
+
+## Prerequisites
+
+Before using this project, you need:
+
+1. **Docker Desktop** - Running on your machine
+2. **Ollama** - Running locally with the `llama3.2:3b` model
+   ```bash
+   # Install Ollama from https://ollama.ai
+   # Pull the model:
+   ollama pull llama3.2:3b
+   ```
+3. **CrewAI Container** - Built from the provided Docker setup (see Setup section)
+
 ## Features
 
 ✅ **Expert HVAC Knowledge**
@@ -20,12 +35,59 @@ An AI-powered HVAC expert assistant that answers all kinds of questions about he
 - Chat continuously with the AI expert
 - Or ask a single question and get an answer
 
+## Setup
+
+This project requires a Docker container with CrewAI and a connection to your local Ollama instance.
+
+### Step 1: Install and Start Ollama
+
+```bash
+# Install Ollama from https://ollama.ai
+# Or if you have it in Docker:
+docker start ollama
+
+# Pull the required model:
+ollama pull llama3.2:3b
+
+# Verify it's running:
+ollama list
+```
+
+### Step 2: Build the CrewAI Container
+
+Navigate to the parent directory containing `docker-compose.yml` and `Dockerfile`:
+
+```bash
+cd /path/to/opencode  # Or wherever your docker-compose.yml is located
+docker compose build
+docker compose up -d
+```
+
+This creates a container that:
+- Has CrewAI, LangChain, and LiteLLM installed
+- Can communicate with your local Ollama instance
+- Mounts this hvac-technician folder for access to the scripts
+
+### Step 3: Verify Setup
+
+```bash
+# Check containers are running:
+docker ps
+
+# You should see:
+# - ollama container (if using Docker for Ollama)
+# - crewai-agent container
+```
+
 ## Quick Start
+
+**Note:** These commands assume you're in the directory containing `docker-compose.yml` (e.g., `/path/to/opencode/`).
+If the compose file is in a different location, add `-f /path/to/docker-compose.yml` to the commands.
 
 ### Interactive Mode (Recommended)
 
 ```bash
-docker compose exec crewai python hvac_expert.py
+docker compose exec crewai python /app/HVAC_ideas/hvac-technician/hvac_expert.py
 ```
 
 Then ask questions like:
@@ -40,14 +102,22 @@ Type `quit` to exit.
 ### Single Question Mode
 
 ```bash
-docker compose exec crewai python hvac_expert.py "How often should I replace my HVAC filter?"
+docker compose exec crewai python /app/HVAC_ideas/hvac-technician/hvac_expert.py "How often should I replace my HVAC filter?"
 ```
 
-### Use with olla (Simpler, No Container)
+### Using the Shell Command (If Configured)
+
+If you've set up the `hvac` shell function in your `~/.zshrc`:
 
 ```bash
-olla "You are an HVAC expert. How do I troubleshoot a furnace that won't turn on?"
+# Single question with animated spinner
+hvac "How often should I change my HVAC filter?"
+
+# Interactive mode
+hvac
 ```
+
+This provides a cleaner interface with automatic error filtering and progress indication.
 
 ## Example Questions
 
@@ -203,12 +273,27 @@ Here's a step-by-step troubleshooting guide:
 3. **Ask Follow-ups** - The AI remembers context in interactive mode
 4. **Safety First** - Always follow safety recommendations
 
-## Powered By
+## Technical Stack
 
-- **CrewAI** - Multi-agent AI framework
-- **Ollama** - Local AI (llama3.2:3b)
-- **20+ years** of virtual HVAC expertise!
+- **CrewAI** - Multi-agent AI framework for coordinating specialized agents
+- **Ollama** - Local LLM runtime (runs llama3.2:3b model on your machine)
+- **Docker** - Container orchestration for easy deployment
+- **Python 3.11** - Application runtime environment
+
+## Why Local AI?
+
+✅ **100% Free** - No API costs, no subscriptions, no usage limits
+✅ **Private** - All data stays on your machine, no external servers
+✅ **No Internet Required** - Works completely offline once setup
+✅ **Fast** - Direct communication between containers
+✅ **Customizable** - Full control over models and agents
+
+**Cost Comparison:**
+- This setup: $0.00
+- Cloud AI APIs: $0.01-0.10+ per question
 
 ---
 
 **Need HVAC help? Your virtual technician is ready! 🔧**
+
+**Questions or issues?** Make sure Ollama is running locally with `llama3.2:3b` model installed.
