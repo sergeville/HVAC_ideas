@@ -33,7 +33,7 @@ hvac "How often should I change my HVAC filter?"
 docker compose exec crewai python /app/HVAC_ideas/hvac-technician/hvac_expert.py
 ```
 
-📖 [Full Documentation](hvac-technician/README.md)
+📖 [Virtual HVAC Technician Full Documentation](hvac-technician/README.md)
 
 ### 2. Oil Tank Diagnostic Tools ⛽ 🔵 PAID (Claude API)
 **AI System:** Claude API (Anthropic, cloud-based)
