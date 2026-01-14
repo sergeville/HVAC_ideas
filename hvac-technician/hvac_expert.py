@@ -80,8 +80,10 @@ def configure_llm(llm_choice):
         # Default: Ollama (free)
         ollama_host = os.getenv('OLLAMA_HOST', 'http://localhost:11434')
         print("🟢 Using Ollama (FREE - Local)")
+        # Using llama3.1:8b for better accuracy and reasoning (4.7GB)
+        # Alternative models: qwen2.5:7b (better), llama3.2:3b (2GB, faster but less accurate)
         return LLM(
-            model="ollama/llama3.2:3b",
+            model="ollama/llama3.1:8b",
             base_url=ollama_host
         ), 'ollama'
 
@@ -110,7 +112,15 @@ def create_agents(llm_instance):
         You explain technical concepts clearly, provide step-by-step guidance,
         and always prioritize safety. You're patient, thorough, and helpful.
 
-        CRITICAL: You always format your responses professionally with:
+        CRITICAL ACCURACY REQUIREMENTS:
+        - Double-check all temperature ranges and numbers before responding
+        - Ensure advice is logically consistent (no contradictions)
+        - When giving temperature setback advice, LOWER temperatures save energy, not HIGHER
+        - Provide specific scenarios (day/night/away) with different recommendations
+        - Include quantifiable data when possible (percentages, ranges)
+        - If uncertain about a fact, acknowledge it rather than guessing
+
+        CRITICAL FORMATTING REQUIREMENTS:
         - A descriptive title at the top
         - Clear hierarchical section headers
         - Numbered lists for sequential steps
@@ -139,7 +149,14 @@ def create_agents(llm_instance):
         You ask clarifying questions to narrow down issues and provide
         safe, practical solutions.
 
-        CRITICAL: You always format troubleshooting guides professionally with:
+        CRITICAL ACCURACY REQUIREMENTS:
+        - Verify all diagnostic steps are technically sound
+        - Ensure troubleshooting steps follow logical sequence
+        - Provide specific measurements and values where applicable
+        - Distinguish between DIY-safe tasks and professional-only work
+        - Double-check that safety warnings are appropriate and complete
+
+        CRITICAL FORMATTING REQUIREMENTS:
         - A clear diagnostic title
         - Organized sections with headers
         - Numbered steps in logical order
@@ -191,21 +208,29 @@ def ask_question(question, use_diagnostics=False, hvac_expert=None, diagnostics_
         task = Task(
             description=f"""User question: {question}
 
-            Provide a clear, comprehensive answer with professional formatting:
+            STEP 1 - THINK THROUGH YOUR ANSWER:
+            - Consider different scenarios (day/night/away/occupied)
+            - Verify numbers and ranges are accurate
+            - Check for logical consistency (no contradictions)
+            - Include specific, quantifiable information where possible
+
+            STEP 2 - PROVIDE A COMPREHENSIVE ANSWER WITH PROFESSIONAL FORMATTING:
 
             FORMAT REQUIREMENTS:
             1. Start with a descriptive title (e.g., "Winter Thermostat Settings: Guide")
-            2. Use clear section headers (e.g., "Key Recommendations:", "Important Notes:")
+            2. Use clear section headers (e.g., "Recommended Settings:", "Energy Savings:")
             3. Organize with numbered lists (for steps/sequences) and bullet points (for related items)
             4. Keep paragraphs short and scannable (2-3 lines maximum)
             5. Use proper spacing between sections
             6. Create visual hierarchy with indented sub-points
 
             CONTENT REQUIREMENTS:
-            - Include relevant details, examples, and practical advice
+            - Provide scenario-specific advice (when applicable)
+            - Include quantifiable data (percentages, temperature ranges, savings)
+            - Give relevant details, examples, and practical advice
             - If it's a safety concern, emphasize safety precautions
             - If it involves complex repairs, mention when to call a professional
-            - Be thorough but concise""",
+            - Be thorough, accurate, and concise""",
             agent=hvac_expert,
             expected_output="Professionally formatted, comprehensive answer to the HVAC question"
         )
