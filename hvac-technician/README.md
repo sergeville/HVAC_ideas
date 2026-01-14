@@ -296,7 +296,11 @@ Here's a step-by-step troubleshooting guide:
 
 This Virtual HVAC Technician is part of a larger collection of HVAC diagnostic tools. You may also be interested in:
 
-### Oil Tank & Fuel Pump Diagnostics ⛽
+### Oil Tank & Fuel Pump Diagnostics ⛽ 🔵 PAID (Different System)
+
+**⚠️ Important:** These tools use a DIFFERENT AI system than this Virtual HVAC Technician:
+- **This tool:** FREE - Local Ollama + CrewAI (no API costs)
+- **Oil tank tools:** PAID - Claude API (requires ANTHROPIC_API_KEY, ~$0.01-0.05 per session)
 
 If you're troubleshooting oil heating systems, fuel pumps, or tank transfer issues, check out these specialized diagnostic scripts in the parent directory:
 
@@ -336,7 +340,19 @@ From the repository root (`/path/to/HVAC_ideas/`):
 ./run_ai_diagnostic.sh
 ```
 
-**Note:** These tools use the same local AI setup (Ollama + CrewAI) so you don't need any additional configuration!
+**⚠️ Setup Required for Oil Tank Tools:**
+These tools use Claude API (NOT local Ollama). You need to:
+1. Get an API key from https://console.anthropic.com/
+2. Create a `.env.diagnostic` file with:
+   ```
+   ANTHROPIC_API_KEY=your-api-key-here
+   ```
+3. Have internet connection for API calls
+4. Budget for API costs (~$0.01-0.05 per diagnostic session)
+
+**Why Two Different Systems?**
+- **Virtual HVAC Technician** (this tool) - General HVAC knowledge works great with local Ollama
+- **Oil Tank Diagnostics** - Highly specialized domain requiring Claude's advanced reasoning
 
 ---
 

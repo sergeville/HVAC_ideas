@@ -2,12 +2,17 @@
 
 A comprehensive collection of HVAC (Heating, Ventilation, and Air Conditioning) AI-powered diagnostic tools, technical documentation, and troubleshooting guides.
 
-**🤖 Powered by Local AI** - All AI tools run locally using Ollama (no cloud, no API costs, completely free and private)
+**⚡ Two AI Systems Available:**
+- **System 1:** Virtual HVAC Technician - 🟢 FREE (Local Ollama + CrewAI)
+- **System 2:** Oil Tank Diagnostics - 🔵 PAID (Claude API, cloud-based)
 
 ## 🚀 AI-Powered Tools
 
-### 1. Virtual HVAC Technician 🔧
+### 1. Virtual HVAC Technician 🔧 🟢 FREE & LOCAL
 **Location:** `hvac-technician/`
+**AI System:** CrewAI + Ollama (llama3.2:3b) running in Docker
+**Cost:** $0.00 - Completely free, runs 100% locally
+**Privacy:** All data stays on your machine, no cloud, no internet required
 
 An AI expert assistant with 20+ years of virtual HVAC knowledge. Ask any question about heating, cooling, ventilation, installation, maintenance, or troubleshooting.
 
@@ -17,6 +22,7 @@ An AI expert assistant with 20+ years of virtual HVAC knowledge. Ask any questio
 - Auto-detects troubleshooting questions
 - Covers residential & commercial systems
 - Safety-first approach
+- **No API keys needed** - everything runs locally
 
 **Quick Start:**
 ```bash
@@ -29,9 +35,18 @@ docker compose exec crewai python /app/HVAC_ideas/hvac-technician/hvac_expert.py
 
 📖 [Full Documentation](hvac-technician/README.md)
 
-### 2. Oil Tank Diagnostic Tools ⛽
+### 2. Oil Tank Diagnostic Tools ⛽ 🔵 PAID (Claude API)
+**AI System:** Claude API (Anthropic, cloud-based)
+**Cost:** Paid API - Requires Anthropic API key (~$0.01-0.05 per diagnostic session)
+**Privacy:** Data sent to Anthropic's servers for processing
+**Setup Required:** ANTHROPIC_API_KEY in `.env.diagnostic` file
 
 AI-powered troubleshooting scripts for oil heating systems, specifically focused on fuel pump and tank transfer issues.
+
+**⚠️ Important:** These scripts use the Claude API (not local). You need:
+1. An Anthropic API account at https://console.anthropic.com/
+2. A paid API key configured in `.env.diagnostic`
+3. Internet connection for API calls
 
 **Available Scripts:**
 
@@ -108,9 +123,9 @@ The documentation covers these primary HVAC components:
 - **CCH** - Crankcase Heater
 - **RVS** - Reversing Valve
 
-## 🛠️ Prerequisites (For AI Tools)
+## 🛠️ Prerequisites
 
-To use the AI-powered tools, you need:
+### For Virtual HVAC Technician (Local/Free)
 
 1. **Docker Desktop** - Running on your machine
 2. **Ollama** - Local LLM runtime with `llama3.2:3b` model
@@ -128,6 +143,22 @@ To use the AI-powered tools, you need:
    ```
 
 For detailed setup instructions, see the [Virtual HVAC Technician README](hvac-technician/README.md).
+
+### For Oil Tank Diagnostics (Claude API/Paid)
+
+1. **Anthropic API Account** - Sign up at https://console.anthropic.com/
+2. **API Key** - Generate a paid API key from your account
+3. **Configuration File** - Create `.env.diagnostic` with:
+   ```bash
+   ANTHROPIC_API_KEY=your-api-key-here
+   ```
+4. **Internet Connection** - Required for API calls to Anthropic servers
+
+**Estimated Costs:**
+- ~$0.01-0.05 per diagnostic session
+- Pay-as-you-go billing through Anthropic
+
+For detailed information, see the diagnostic tool documentation files listed above.
 
 ## 📖 Additional Documentation
 
@@ -176,11 +207,22 @@ This repository is useful for:
 
 ## 🎯 Why This Repository?
 
-✅ **Free AI Tools** - No API costs, all local using Ollama
-✅ **Privacy** - All diagnostics run on your machine
-✅ **Specialized Knowledge** - 20+ years of virtual HVAC expertise
-✅ **Multiple Diagnostic Approaches** - General questions, specific troubleshooting, step-by-step guides
+### Virtual HVAC Technician (Local/Free)
+✅ **100% Free** - No API costs, all local using Ollama
+✅ **Privacy** - All diagnostics run on your machine, no cloud
+✅ **Offline** - Works without internet once set up
+✅ **Unlimited Usage** - Ask as many questions as you want
+
+### Oil Tank Diagnostics (Claude API/Paid)
+🔵 **Specialized Knowledge** - Deep expertise in oil heating systems
+🔵 **Highly Accurate** - Uses Claude's advanced reasoning
+🔵 **Structured Diagnostics** - Step-by-step troubleshooting workflows
+🔵 **Cost-Effective** - Only ~$0.01-0.05 per diagnostic session
+
+### Both Systems
 ✅ **Safety First** - All tools emphasize safety and when to call professionals
+✅ **Multiple Approaches** - General questions, specific troubleshooting, step-by-step guides
+✅ **Professional Quality** - Built with real-world HVAC expertise
 
 ## 📄 License
 
