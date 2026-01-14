@@ -108,7 +108,16 @@ def create_agents(llm_instance):
         - Tools and equipment
 
         You explain technical concepts clearly, provide step-by-step guidance,
-        and always prioritize safety. You're patient, thorough, and helpful.""",
+        and always prioritize safety. You're patient, thorough, and helpful.
+
+        CRITICAL: You always format your responses professionally with:
+        - A descriptive title at the top
+        - Clear hierarchical section headers
+        - Numbered lists for sequential steps
+        - Bulleted lists for related items
+        - Short, scannable paragraphs (2-3 lines max)
+        - Proper spacing between sections
+        - Clean, organized structure that's easy to read quickly""",
         verbose=True,
         allow_delegation=False,
         llm=llm_instance
@@ -128,7 +137,16 @@ def create_agents(llm_instance):
         - Knowing when to call a professional
 
         You ask clarifying questions to narrow down issues and provide
-        safe, practical solutions.""",
+        safe, practical solutions.
+
+        CRITICAL: You always format troubleshooting guides professionally with:
+        - A clear diagnostic title
+        - Organized sections with headers
+        - Numbered steps in logical order
+        - Bulleted lists for options or related points
+        - Clear visual hierarchy (main steps → sub-steps)
+        - Short, actionable instructions
+        - Professional, scannable layout""",
         verbose=True,
         allow_delegation=False,
         llm=llm_instance
@@ -144,17 +162,28 @@ def ask_question(question, use_diagnostics=False, hvac_expert=None, diagnostics_
         task = Task(
             description=f"""User question: {question}
 
-            Provide a detailed, step-by-step troubleshooting guide.
-            Include:
+            Provide a detailed, step-by-step troubleshooting guide with professional formatting:
+
+            FORMAT REQUIREMENTS:
+            1. Start with a clear diagnostic title
+            2. Use section headers (e.g., "Possible Causes:", "Diagnostic Steps:", "Solutions:")
+            3. Number troubleshooting steps in logical order
+            4. Use bullet points for lists of causes, symptoms, or options
+            5. Create sub-steps with indentation when needed
+            6. Keep each step concise and actionable
+            7. Use proper spacing for readability
+
+            CONTENT REQUIREMENTS:
+            Include these sections:
             1. Possible causes
-            2. Diagnostic steps
-            3. Solutions
-            4. Safety warnings
+            2. Diagnostic steps (numbered, sequential)
+            3. Solutions (specific and practical)
+            4. Safety warnings (clearly highlighted)
             5. When to call a professional
 
-            Be specific and practical.""",
+            Be specific, practical, and well-organized.""",
             agent=diagnostics_expert,
-            expected_output="Detailed troubleshooting guide with step-by-step instructions"
+            expected_output="Professionally formatted troubleshooting guide with clear step-by-step instructions"
         )
         agent = diagnostics_expert
     else:
@@ -162,12 +191,23 @@ def ask_question(question, use_diagnostics=False, hvac_expert=None, diagnostics_
         task = Task(
             description=f"""User question: {question}
 
-            Provide a clear, comprehensive answer.
-            Include relevant details, examples, and practical advice.
-            If it's a safety concern, emphasize safety precautions.
-            If it involves complex repairs, mention when to call a professional.""",
+            Provide a clear, comprehensive answer with professional formatting:
+
+            FORMAT REQUIREMENTS:
+            1. Start with a descriptive title (e.g., "Winter Thermostat Settings: Guide")
+            2. Use clear section headers (e.g., "Key Recommendations:", "Important Notes:")
+            3. Organize with numbered lists (for steps/sequences) and bullet points (for related items)
+            4. Keep paragraphs short and scannable (2-3 lines maximum)
+            5. Use proper spacing between sections
+            6. Create visual hierarchy with indented sub-points
+
+            CONTENT REQUIREMENTS:
+            - Include relevant details, examples, and practical advice
+            - If it's a safety concern, emphasize safety precautions
+            - If it involves complex repairs, mention when to call a professional
+            - Be thorough but concise""",
             agent=hvac_expert,
-            expected_output="Clear, comprehensive answer to the HVAC question"
+            expected_output="Professionally formatted, comprehensive answer to the HVAC question"
         )
         agent = hvac_expert
 
