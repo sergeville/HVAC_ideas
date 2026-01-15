@@ -6,8 +6,8 @@ Complete guide for troubleshooting Tank #1 and Tank #2 auto-fill failures using 
 
 | Tank | Command | Output Files |
 |------|---------|--------------|
-| **Tank #1** | `./run_ai_diagnostic.sh` | `Tank1_AI_Conversation_*.txt`<br>`Tank1_AI_Diagnostic_Report_*.txt` |
-| **Tank #2** | `./run_ai_tank2_diagnostic.sh` | `Tank2_AI_Conversation_*.txt`<br>`Tank2_AI_Diagnostic_Report_*.txt` |
+| **Tank #1** | `./scripts/run_ai_diagnostic.sh` | `Tank1_AI_Conversation_*.txt`<br>`Tank1_AI_Diagnostic_Report_*.txt` |
+| **Tank #2** | `./scripts/run_ai_tank2_diagnostic.sh` | `Tank2_AI_Conversation_*.txt`<br>`Tank2_AI_Diagnostic_Report_*.txt` |
 
 ## System Information
 
@@ -77,7 +77,7 @@ Go to: https://console.anthropic.com/settings/plans
 ### Start Tank #1 Session
 
 ```bash
-./run_ai_diagnostic.sh
+./scripts/run_ai_diagnostic.sh
 ```
 
 ### Example Session
@@ -111,7 +111,7 @@ AI: Perfect. So we'll focus on Input ID and relay M4.
 ### Start Tank #2 Session
 
 ```bash
-./run_ai_tank2_diagnostic.sh
+./scripts/run_ai_tank2_diagnostic.sh
 ```
 
 ### Example Session
@@ -387,7 +387,7 @@ HVAC_ideas/
 cat .env.diagnostic
 
 # 2. Run Tank 1 diagnostic
-./run_ai_diagnostic.sh
+./scripts/run_ai_diagnostic.sh
 
 # 3. Answer AI questions naturally
 # 4. Review report in .tmp/ folder
@@ -400,7 +400,7 @@ cat .env.diagnostic
 cat .env.diagnostic
 
 # 2. Run Tank 2 diagnostic
-./run_ai_tank2_diagnostic.sh
+./scripts/run_ai_tank2_diagnostic.sh
 
 # 3. Answer AI questions naturally
 # 4. Review report in .tmp/ folder
@@ -410,8 +410,8 @@ cat .env.diagnostic
 
 ```bash
 # Run diagnostics separately
-./run_ai_diagnostic.sh       # Tank 1 first
-./run_ai_tank2_diagnostic.sh # Tank 2 second
+./scripts/run_ai_diagnostic.sh       # Tank 1 first
+./scripts/run_ai_tank2_diagnostic.sh # Tank 2 second
 
 # Compare reports to find common cause
 # (likely Input IL or Relay M1 if both fail)

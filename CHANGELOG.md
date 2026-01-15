@@ -35,6 +35,50 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [2026-01-15] - Scripts Reorganization & Documentation
+
+### Changed
+- **Reorganized all shell scripts** into dedicated `scripts/` directory
+- Moved 5 shell scripts from root and execution/ to scripts/
+- Updated all script paths in documentation from `./run_*.sh` to `./scripts/run_*.sh`
+- Updated directory structure in CLAUDE.md, AGENTS.md, and GEMINI.md
+
+### Added
+- Comprehensive header documentation in all shell scripts
+- Inline comments explaining each script's purpose, requirements, and usage
+- Script descriptions including:
+  - Purpose and functionality
+  - Usage examples
+  - Requirements and dependencies
+  - Cost information (free vs paid API)
+  - Related documentation references
+
+### Removed
+- `main.py` - Unused placeholder file deleted
+- Shell scripts from root directory (moved to scripts/)
+- `execution/resolve_system_issues.sh` (moved to scripts/)
+
+### Scripts Reorganized
+- `scripts/run_ai_diagnostic.sh` - AI-powered Tank #1 diagnostics (Claude API)
+- `scripts/run_ai_tank2_diagnostic.sh` - AI-powered Tank #2 diagnostics (Claude API)
+- `scripts/run_tank1_diagnostic.sh` - Basic Tank #1 diagnostics (FREE)
+- `scripts/run_tank2_diagnostic.sh` - Basic Tank #2 diagnostics (FREE)
+- `scripts/resolve_system_issues.sh` - Multi-agent log resolution system
+
+### Documentation Updates
+- Updated README.md with new script paths
+- Updated HVAC_Docs/Technical_Guides/AI_DIAGNOSTIC_README.md
+- Updated HVAC_Docs/Technical_Guides/TANK_DIAGNOSTICS_GUIDE.md
+- Enhanced Code & Architecture section in README.md
+
+### Benefits
+- **Cleaner root directory** - Only essential files in root
+- **Better organization** - Scripts separated from core execution code
+- **Improved documentation** - Every script fully documented
+- **Maintains 3-layer architecture** - Scripts for convenience, execution/ for core logic
+
+---
+
 ## [2026-01-14] - System Improvements & Documentation
 
 ### Added

@@ -10,12 +10,12 @@ These AI-powered applications guide you through systematic troubleshooting of Ta
 
 ### Tank #1 Issues
 ```bash
-./run_ai_diagnostic.sh
+./scripts/run_ai_diagnostic.sh
 ```
 
 ### Tank #2 Issues
 ```bash
-./run_ai_tank2_diagnostic.sh
+./scripts/run_ai_tank2_diagnostic.sh
 ```
 
 ## ✨ Example Session
@@ -196,7 +196,7 @@ The `.env.diagnostic` file is shared by both Tank #1 and Tank #2 apps.
 
 **Option A: Let launcher create template**
 ```bash
-./run_ai_diagnostic.sh
+./scripts/run_ai_diagnostic.sh
 # Will create .env.diagnostic template automatically
 ```
 
@@ -217,10 +217,10 @@ nano .env.diagnostic
 
 ```bash
 # Tank 1
-./run_ai_diagnostic.sh
+./scripts/run_ai_diagnostic.sh
 
 # Tank 2
-./run_ai_tank2_diagnostic.sh
+./scripts/run_ai_tank2_diagnostic.sh
 ```
 
 **That's it!** The apps will auto-install required Python libraries.
@@ -230,7 +230,7 @@ nano .env.diagnostic
 ### Starting a Session
 
 ```bash
-./run_ai_diagnostic.sh
+./scripts/run_ai_diagnostic.sh
 ```
 
 The AI will greet you and ask for your name and problem description.
@@ -385,7 +385,7 @@ pip install anthropic
 
 Or just run the launcher again - it auto-installs:
 ```bash
-./run_ai_diagnostic.sh
+./scripts/run_ai_diagnostic.sh
 ```
 
 ### Model Errors (404)
@@ -396,8 +396,8 @@ Or just run the launcher again - it auto-installs:
 
 **If it still fails:** Your API account may have restricted access. Contact Anthropic support or use the FREE basic apps instead:
 ```bash
-./run_tank1_diagnostic.sh    # FREE version
-./run_tank2_diagnostic.sh    # FREE version
+./scripts/run_tank1_diagnostic.sh    # FREE version
+./scripts/run_tank2_diagnostic.sh    # FREE version
 ```
 
 ### App Starts Then Crashes
@@ -433,8 +433,8 @@ cat .env.diagnostic
 
 **Basic apps are completely FREE:**
 ```bash
-./run_tank1_diagnostic.sh    # Tank 1 FREE
-./run_tank2_diagnostic.sh    # Tank 2 FREE
+./scripts/run_tank1_diagnostic.sh    # Tank 1 FREE
+./scripts/run_tank2_diagnostic.sh    # Tank 2 FREE
 ```
 
 See `ALL_DIAGNOSTIC_APPS.md` for complete comparison.
@@ -550,10 +550,10 @@ Since deployment, the AI diagnostic apps have:
 
 ```bash
 # Start Tank 1 AI diagnostic
-./run_ai_diagnostic.sh
+./scripts/run_ai_diagnostic.sh
 
 # Start Tank 2 AI diagnostic
-./run_ai_tank2_diagnostic.sh
+./scripts/run_ai_tank2_diagnostic.sh
 
 # View recent Tank 1 session
 cat .tmp/Tank1_AI_Conversation_*.txt | tail -100
@@ -591,7 +591,7 @@ cat .env.diagnostic
 **Ready to diagnose?**
 
 ```bash
-./run_ai_diagnostic.sh
+./scripts/run_ai_diagnostic.sh
 ```
 
 Get intelligent, expert-level troubleshooting guidance in natural conversation!

@@ -56,6 +56,7 @@ Errors are learning opportunities. When something breaks:
 **Directory structure:**
 - `.tmp/` - All intermediate files (dossiers, scraped data, temp exports). Never commit, always regenerated.
 - `execution/` - Python scripts (the deterministic tools)
+- `scripts/` - Convenience wrapper scripts (.sh) for launching tools
 - `directives/` - SOPs in Markdown (the instruction set)
 - `HVAC_Docs/` - All technical documentation (organized by category)
 - `.env` - Environment variables and API keys

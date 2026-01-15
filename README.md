@@ -51,29 +51,29 @@ AI-powered troubleshooting scripts for oil heating systems, specifically focused
 **Available Scripts:**
 
 #### Tank 1 Diagnostics
-- **`run_tank1_diagnostic.sh`** - Tank 1 auto-fill diagnostic questionnaire
+- **`scripts/run_tank1_diagnostic.sh`** - Tank 1 auto-fill diagnostic questionnaire
 - Troubleshoots automatic fill systems, float switches, and control boxes
 
 #### Tank 2 Diagnostics
-- **`run_tank2_diagnostic.sh`** - Tank 2 transfer pump diagnostic
-- **`run_ai_tank2_diagnostic.sh`** - AI-enhanced Tank 2 diagnostics
+- **`scripts/run_tank2_diagnostic.sh`** - Tank 2 transfer pump diagnostic
+- **`scripts/run_ai_tank2_diagnostic.sh`** - AI-enhanced Tank 2 diagnostics
 - Troubleshoots fuel transfer pumps, relay issues, and electrical problems
 
 #### General AI Diagnostics
-- **`run_ai_diagnostic.sh`** - General oil tank AI diagnostic assistant
+- **`scripts/run_ai_diagnostic.sh`** - General oil tank AI diagnostic assistant
 - Interactive troubleshooting for fuel pump systems
 - Helps identify root causes and recommend solutions
 
 **Quick Start:**
 ```bash
 # Run Tank 1 diagnostics
-./run_tank1_diagnostic.sh
+./scripts/run_tank1_diagnostic.sh
 
 # Run Tank 2 AI-enhanced diagnostics
-./run_ai_tank2_diagnostic.sh
+./scripts/run_ai_tank2_diagnostic.sh
 
 # General AI diagnostic assistant
-./run_ai_diagnostic.sh
+./scripts/run_ai_diagnostic.sh
 ```
 
 **Documentation:**
@@ -107,10 +107,16 @@ This project follows a **3-layer architecture** for maximum reliability:
 2. **Layer 2: Orchestration** (AI agents) - Intelligent routing and decision-making
 3. **Layer 3: Execution** (`execution/`) - Deterministic Python scripts
 
-**Key Files:**
-- **main.py** - Python utilities for HVAC analysis
-- **requirements.txt** - Python package dependencies
+**Key Directories:**
+- **scripts/** - Convenience wrapper scripts for launching diagnostic tools
+- **execution/** - Core Python diagnostic and processing scripts
+- **directives/** - Standard operating procedures in Markdown
+- **HVAC_Docs/** - All technical documentation (organized by category)
 - **.tmp/** - Temporary/intermediate processing files (not committed)
+
+**Configuration:**
+- **requirements.txt** - Python package dependencies
+- **.env.diagnostic** - API keys for Claude-powered diagnostics
 
 See [CLAUDE.md](CLAUDE.md) for complete architecture documentation.
 
