@@ -60,6 +60,7 @@ Project context, development standards, system improvements, and technical imple
 ### Core Documentation
 - **[PROJECT_CONTEXT.md](Development_Docs/PROJECT_CONTEXT.md)** - Comprehensive project overview for AI assistants
 - **[DOCUMENTATION_STANDARDS.md](Development_Docs/DOCUMENTATION_STANDARDS.md)** - Documentation best practices and guidelines
+- **[DEPENDENCY_HIERARCHY.md](Development_Docs/DEPENDENCY_HIERARCHY.md)** - Complete dependency tree and setup guide
 
 ### System Guides
 - **[LLM_SWITCHING_GUIDE.md](Development_Docs/LLM_SWITCHING_GUIDE.md)** - How to switch between AI models (Claude, Ollama)
@@ -115,6 +116,7 @@ Research notes, legal considerations, and other reference materials.
 
 **For Developers:**
 - [Development_Docs/PROJECT_CONTEXT.md](Development_Docs/PROJECT_CONTEXT.md)
+- [Development_Docs/DEPENDENCY_HIERARCHY.md](Development_Docs/DEPENDENCY_HIERARCHY.md)
 - [Development_Docs/DOCUMENTATION_STANDARDS.md](Development_Docs/DOCUMENTATION_STANDARDS.md)
 - [Development_Docs/LLM_SWITCHING_GUIDE.md](Development_Docs/LLM_SWITCHING_GUIDE.md)
 

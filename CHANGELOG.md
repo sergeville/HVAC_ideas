@@ -35,6 +35,32 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [2026-01-15] - Dependency Hierarchy Documentation
+
+### Added
+- **[DEPENDENCY_HIERARCHY.md](HVAC_Docs/Development_Docs/DEPENDENCY_HIERARCHY.md)** - Comprehensive dependency documentation
+  - Complete dependency tree (System → Runtime → Python → Scripts)
+  - External API dependencies (Anthropic Claude, Google Gemini)
+  - Python package dependencies with usage details
+  - Script-to-execution mapping
+  - Data flow diagrams
+  - Feature-based dependency grouping
+  - Setup guides by feature
+  - Troubleshooting guide
+  - Dependency checklist
+
+### Documentation Updates
+- Updated HVAC_Docs/README.md with dependency hierarchy reference
+- Added to Core Documentation and Developer quick reference sections
+
+### Benefits
+- **Complete visibility** - All dependencies mapped in one document
+- **Easy troubleshooting** - Common issues and solutions documented
+- **Feature-based setup** - Install only what you need
+- **Onboarding aid** - New developers can quickly understand requirements
+
+---
+
 ## [2026-01-15] - Scripts Reorganization & Documentation
 
 ### Changed
