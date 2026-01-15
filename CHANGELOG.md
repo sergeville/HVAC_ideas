@@ -12,6 +12,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - **Major refactor:** Reorganized 28 documentation files into structured HVAC_Docs/ directory
 - Moved all technical documentation from root to categorized subdirectories
 - Updated README.md with new file paths and enhanced architecture overview
+- Updated CLAUDE.md, AGENTS.md, and GEMINI.md with HVAC_Docs/ directory reference
 - Implemented "Essential Root" organization principle - root now contains only essential execution files
 
 ### Added
@@ -24,11 +25,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - Created comprehensive HVAC_Docs/README.md as documentation navigation index
 - Added DOCUMENTATION_TRACKING.md guide for tracking documentation changes
 - Added CHANGELOG.md (this file) for high-level change tracking
+- Created git tag: `docs-v1.0-reorganization`
 
 ### Technical Details
 - Preserved 3-layer architecture structure (directives/, execution/, .tmp/)
 - All file moves tracked as renames in git (history preserved)
 - 203 lines added, 32 lines removed across 30 files
+- CLAUDE.md made project-specific (vs universal template)
 
 ---
 
