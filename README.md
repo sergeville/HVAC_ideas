@@ -77,38 +77,42 @@ AI-powered troubleshooting scripts for oil heating systems, specifically focused
 ```
 
 **Documentation:**
-- 📖 [Tank Diagnostics Guide](TANK_DIAGNOSTICS_GUIDE.md)
-- 📖 [Tank 1 Diagnostic App README](TANK1_DIAGNOSTIC_APP_README.md)
-- 📖 [AI Diagnostic README](AI_DIAGNOSTIC_README.md)
-- 📖 [All Diagnostic Apps Overview](ALL_DIAGNOSTIC_APPS.md)
-- 📖 [Diagnostic Apps Comparison](DIAGNOSTIC_APPS_COMPARISON.md)
-- 📄 [Tank 1 Auto Fill Guide (PDF)](Tank1_Auto_Fill_Diagnostic_Guide.pdf)
-- 📄 [Oil Tank Transfer Troubleshooting (PDF)](Oil_Tank_Transfer_Troubleshooting_Guide.pdf)
+- 📖 [Tank Diagnostics Guide](HVAC_Docs/Technical_Guides/TANK_DIAGNOSTICS_GUIDE.md)
+- 📖 [Tank 1 Diagnostic App README](HVAC_Docs/Technical_Guides/TANK1_DIAGNOSTIC_APP_README.md)
+- 📖 [AI Diagnostic README](HVAC_Docs/Technical_Guides/AI_DIAGNOSTIC_README.md)
+- 📖 [All Diagnostic Apps Overview](HVAC_Docs/Technical_Guides/ALL_DIAGNOSTIC_APPS.md)
+- 📖 [Diagnostic Apps Comparison](HVAC_Docs/Technical_Guides/DIAGNOSTIC_APPS_COMPARISON.md)
+- 📄 [Tank 1 Auto Fill Guide (PDF)](HVAC_Docs/Technical_Guides/Tank1_Auto_Fill_Diagnostic_Guide.pdf)
+- 📄 [Oil Tank Transfer Troubleshooting (PDF)](HVAC_Docs/Technical_Guides/Oil_Tank_Transfer_Troubleshooting_Guide.pdf)
 
 ## 📚 Project Contents
 
 ### Documentation
 
-- **HVAC.md** - Comprehensive technical analysis of outdoor heat pump unit electrical wiring
-  - Component abbreviations and functions
-  - System logic and power flow diagrams
-  - Safety switches and sensors reference
-  - Standard wire color guide
+All technical documentation has been organized in the **HVAC_Docs/** directory:
 
-- **AI-Prompt-Guide-for-HVAC-AR-Glasses.md** - Guide for using AI-powered AR glasses in HVAC fieldwork
-  - Optimized prompts for real-time diagnostics
-  - Best practices for using AR glasses with HVAC systems
-  - Hardware limitations and workarounds
+- **[HVAC_Docs/](HVAC_Docs/)** - Complete documentation hub
+  - **Technical_Guides/** - Diagnostic guides, troubleshooting PDFs, HVAC diagrams
+  - **Procedures/** - Step-by-step verification procedures and checklists
+  - **Development_Docs/** - Project context, standards, and improvement logs
+  - **Prompts_and_Guides/** - AI prompt guides and HVAC AR glasses documentation
 
-### Diagrams & References
+See the [HVAC Documentation Index](HVAC_Docs/README.md) for a complete navigation guide.
 
-- **hvac.jpeg** - HVAC system diagram
-- **can help me understand this hvac diagram.pdf** - Technical schematic reference document
+### Code & Architecture
 
-### Code
+This project follows a **3-layer architecture** for maximum reliability:
 
+1. **Layer 1: Directives** (`directives/`) - SOPs and instructions in Markdown
+2. **Layer 2: Orchestration** (AI agents) - Intelligent routing and decision-making
+3. **Layer 3: Execution** (`execution/`) - Deterministic Python scripts
+
+**Key Files:**
 - **main.py** - Python utilities for HVAC analysis
 - **requirements.txt** - Python package dependencies
+- **.tmp/** - Temporary/intermediate processing files (not committed)
+
+See [CLAUDE.md](CLAUDE.md) for complete architecture documentation.
 
 ## Key Components Reference
 
@@ -162,20 +166,22 @@ For detailed information, see the diagnostic tool documentation files listed abo
 
 ## 📖 Additional Documentation
 
-### Technical Guides
-- **[Oil Tank Transfer Box Verification Procedure](Oil%20Tank%20Transfer%20Box%20Verification%20Procedure.md)** - Step-by-step verification guide
-- **[PLC Fault Code Guide](PLC%20Fault%20Code%20Guide.md)** - PLC error codes and solutions
-- **[Model Fix README](MODEL_FIX_README.md)** - AI model configuration fixes
-
-### Multi-Agent Systems
-- **[AGENTS.md](AGENTS.md)** - Multi-agent system documentation
-- **[Multi-Agent Log Resolution](multi-agents-log-resolution.md)** - Agent collaboration for log analysis
-- **[Log Resolution README](README_LOG_RESOLUTION.md)** - Detailed log analysis guide
-
-### AI Prompts & Guides
+### Core AI Instructions (Root)
+- **[AGENTS.md](AGENTS.md)** - Multi-agent system architecture and instructions
 - **[CLAUDE.md](CLAUDE.md)** - Claude AI configuration and prompts
 - **[GEMINI.md](GEMINI.md)** - Gemini AI configuration and prompts
-- **[AI Co-authorship Legal Implications](AI%20Co-authorship%20and%20Legal%20Implications.md)** - Legal considerations for AI-generated content
+
+### Technical Procedures
+- **[Oil Tank Transfer Box Verification](HVAC_Docs/Procedures/Oil%20Tank%20Transfer%20Box%20Verification%20Procedure.md)** - Step-by-step verification guide
+- **[PLC Fault Code Guide](HVAC_Docs/Procedures/PLC%20Fault%20Code%20Guide.md)** - PLC error codes and solutions
+- **[Technical Verification Checklist](HVAC_Docs/Procedures/checklist.md)** - System verification steps
+
+### Development Documentation
+- **[Project Context](HVAC_Docs/Development_Docs/PROJECT_CONTEXT.md)** - Comprehensive project overview for AI assistants
+- **[Documentation Standards](HVAC_Docs/Development_Docs/DOCUMENTATION_STANDARDS.md)** - Documentation best practices
+- **[Model Fix Guide](HVAC_Docs/Development_Docs/MODEL_FIX_README.md)** - AI model configuration fixes
+- **[Multi-Agent Log Resolution](HVAC_Docs/Development_Docs/multi-agents-log-resolution.md)** - Agent collaboration workflows
+- **[Improvements Summary](HVAC_Docs/Development_Docs/IMPROVEMENTS_SUMMARY.md)** - System enhancements and changes
 
 ## 🐍 Python Environment (For Non-AI Tools)
 
