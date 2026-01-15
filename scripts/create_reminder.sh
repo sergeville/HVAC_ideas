@@ -98,8 +98,20 @@ echo -e "${BLUE}Creating reminder in Reminders app...${NC}"
 
 osascript << APPLESCRIPT
 tell application "Reminders"
-    -- Get the first available list
-    set theList to list 1
+    -- Use "Claude Reminders" list, create if it doesn't exist
+    set listExists to false
+    repeat with aList in lists
+        if name of aList is "Claude Reminders" then
+            set theList to aList
+            set listExists to true
+            exit repeat
+        end if
+    end repeat
+
+    -- Create the list if it doesn't exist
+    if not listExists then
+        set theList to make new list with properties {name:"Claude Reminders"}
+    end if
 
     -- Create the reminder
     tell theList
