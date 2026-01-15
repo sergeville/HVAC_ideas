@@ -6,3 +6,5 @@ requests
 scikit-learn
 numpy
 python-dateutil
+mcp>=1.25.0
+anthropic>=0.40.0

@@ -72,6 +72,39 @@ Creates a reminder with preset content for testing backup drive power management
 
 ---
 
+### MCP Thought-to-Action System
+
+**`start_mcp_server.sh`** - Launch MCP server for thought-to-action system
+
+**Usage:**
+```bash
+./scripts/start_mcp_server.sh
+```
+
+Provides natural language interface for reminders, TODOs, and mind mapping through MCP tools.
+
+**Features:**
+- 12 MCP tools exposed to Claude
+- Reminders integration (macOS Reminders app)
+- TODO list management (JSON storage)
+- Mind mapping (tree structure with export)
+
+**Tools Available:**
+- `create_reminder`, `list_reminders`, `cancel_reminder`
+- `add_todo`, `list_todos`, `update_todo`, `complete_todo`, `delete_todo`
+- `create_mindmap`, `add_mindmap_node`, `get_mindmap`, `list_mindmaps`, `export_mindmap`
+
+**Requirements:**
+- Python 3.8+
+- MCP SDK: `pip install mcp>=1.25.0`
+- Anthropic API key in `.env.diagnostic`
+
+**Documentation:**
+- 📖 [Thought-to-Action Directive](../directives/thought_to_action.md)
+- 📖 [Main README - MCP Section](../README.md#3-mcp-thought-to-action-system-)
+
+---
+
 ## 📁 Script Organization
 
 ```

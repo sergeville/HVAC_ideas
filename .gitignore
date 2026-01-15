@@ -36,6 +36,10 @@ Thumbs.db
 *.log
 logs/
 
+# MCP Thought-to-Action System
+.tmp/user_data/          # Persistent TODO/mindmap data
+*.mcp.log                # MCP server logs
+
 # Credentials
 credentials.json
 token.json

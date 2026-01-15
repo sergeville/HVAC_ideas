@@ -85,6 +85,42 @@ AI-powered troubleshooting scripts for oil heating systems, specifically focused
 - 📄 [Tank 1 Auto Fill Guide (PDF)](HVAC_Docs/Technical_Guides/Tank1_Auto_Fill_Diagnostic_Guide.pdf)
 - 📄 [Oil Tank Transfer Troubleshooting (PDF)](HVAC_Docs/Technical_Guides/Oil_Tank_Transfer_Troubleshooting_Guide.pdf)
 
+### 3. MCP Thought-to-Action System 🧠 🔵 PAID (Claude API)
+**AI System:** Model Context Protocol (MCP) with Claude API
+**Cost:** Paid API - Requires Anthropic API key
+**Privacy:** Reminders stored locally (macOS) or in JSON; TODOs and mind maps stored locally
+**Setup Required:** MCP SDK + ANTHROPIC_API_KEY in `.env.diagnostic`
+
+Natural language interface for managing reminders, TODO lists, and mind mapping through conversational AI.
+
+**Features:**
+- **Reminders:** Create, list, and cancel reminders in macOS Reminders app (or JSON on other platforms)
+- **TODO Lists:** Full CRUD operations with priority, tags, filtering, and due dates
+- **Mind Mapping:** Hierarchical idea organization with export to Markdown/Mermaid
+- **Natural Language:** "Remind me to test backup drive in 2 hours" → Done!
+- **Persistent Storage:** All data saved locally in `.tmp/user_data/`
+
+**Quick Start:**
+```bash
+# Start the MCP server
+./scripts/start_mcp_server.sh
+
+# The server exposes 12 MCP tools for Claude to use:
+# - create_reminder, list_reminders, cancel_reminder
+# - add_todo, list_todos, update_todo, complete_todo, delete_todo
+# - create_mindmap, add_mindmap_node, get_mindmap, list_mindmaps, export_mindmap
+```
+
+**Example Interactions:**
+- "Remind me to test backup drive in 2 hours"
+- "Add to my TODO: Review HVAC documentation, high priority"
+- "Create a mind map for the MCP integration project"
+- "Show me all pending TODOs tagged with 'documentation'"
+
+**Documentation:**
+- 📖 [Thought-to-Action Directive](directives/thought_to_action.md)
+- 📖 [MCP Tools Implementation Plan](/Users/sergevilleneuve/.claude/plans/dazzling-petting-planet.md)
+
 ## 📚 Project Contents
 
 ### Documentation
