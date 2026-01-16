@@ -156,6 +156,40 @@ This project follows a **3-layer architecture** for maximum reliability:
 
 See [CLAUDE.md](CLAUDE.md) for complete architecture documentation.
 
+### Claude Code Skills (MCP Orchestrator Pattern)
+
+**Location:** `.claude/skills/`
+
+The project includes 8 custom Claude Code skills that follow the **Skills as MCP Orchestrators** pattern:
+
+**✅ CRITICAL**: Skills NEVER access data directly. They orchestrate MCP tools via the Model Context Protocol.
+
+```
+Skills → MCP Protocol → MCP Server → MCP Tools → Data
+```
+
+**Available Skills:**
+- **hvac-setup** - Environment validation and setup
+- **hvac-mcp** - MCP server lifecycle management
+- **hvac-diagnostic** - Run Tank 1/2 diagnostic sessions
+- **hvac-todo** - Task management via MCP (add, list, complete TODOs)
+- **hvac-reminder** - Timed reminders via MCP (macOS Reminders integration)
+- **hvac-mindmap** - Mind map creation via MCP (Markdown/Mermaid export)
+- **hvac-agent** - Multi-agent workflow orchestration
+- **hvac-report** - PDF report generation from diagnostic sessions
+
+**Why This Pattern Matters:**
+1. **Separation of Concerns** - Skills provide intelligence, MCP tools handle data
+2. **Reliability** - Deterministic MCP tools are tested and consistent
+3. **Cross-Platform** - MCP tools handle macOS vs Linux differences
+4. **Maintainability** - One source of truth for data operations
+
+**For Developers:**
+See [Skills README](.claude/skills/README.md) for implementation guide and verification checklist.
+
+**For AI Assistants:**
+See [CLAUDE.md](CLAUDE.md) "Skills as MCP Orchestrators" section for mandatory pattern requirements.
+
 ## Key Components Reference
 
 The documentation covers these primary HVAC components:

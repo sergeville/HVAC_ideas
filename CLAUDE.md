@@ -24,6 +24,84 @@ You operate within a 3-layer architecture that separates concerns to maximize re
 
 **why this works:** if you do everything yourself, errors compound. 90% accuracy per step = 59% success over 5 steps. The solution is push complexity into deterministic code. That way you just focus on decision-making.
 
+## Skills as MCP Orchestrators
+
+**CRITICAL PATTERN**: Claude Code skills must ALWAYS orchestrate MCP tools instead of accessing data directly.
+
+### The Correct Pattern
+
+```
+Skills (.claude/skills/) → MCP Protocol → MCP Server (execution/mcp_server.py) → MCP Tools (execution/mcp_tools/) → Data
+```
+
+**Skills provide**: Workflow intelligence, natural language parameter extraction, preset detection, user interaction logic
+**MCP tools provide**: Data access, file operations, API calls, platform-specific integrations
+
+### What This Means in Practice
+
+✅ **CORRECT - Skills as MCP Orchestrators**:
+- Skills document MCP tool calls in SKILL.md
+- Skills explain workflow logic and parameter extraction
+- Skills have NO Python scripts that access data files
+- All data operations go through MCP protocol
+
+❌ **WRONG - Bypassing MCP**:
+- Skills contain Python scripts that read JSON files directly
+- Skills call shell scripts instead of MCP tools
+- Skills access `.tmp/user_data/` directories directly
+- Skills duplicate logic that exists in MCP tools
+
+### Example: TODO Management
+
+**CORRECT Implementation** (hvac-todo skill):
+```markdown
+## MCP Tool Call
+add_todo(
+  title="Review HVAC documentation",
+  priority="medium",
+  tags=["documentation"]
+)
+```
+
+**WRONG Implementation** (what we fixed):
+```python
+# This bypasses MCP - NEVER DO THIS
+with open(".tmp/user_data/todos.json") as f:
+    todos = json.load(f)
+```
+
+### Why This Matters
+
+1. **Separation of Concerns**: Skills handle intelligence, tools handle data
+2. **Reliability**: Deterministic MCP tools are tested and consistent
+3. **Maintainability**: One source of truth for data operations
+4. **Cross-Platform**: MCP tools handle platform differences (macOS vs Linux)
+5. **Error Handling**: MCP tools provide structured error responses
+
+### Human Communication
+
+**When implementing or reviewing skills**, always verify:
+1. ✅ Does the skill orchestrate MCP tools?
+2. ✅ Are all data operations delegated to MCP server?
+3. ✅ Is the SKILL.md file the only file needed?
+4. ❌ Are there any Python scripts accessing files directly?
+5. ❌ Are there any shell script wrappers bypassing MCP?
+
+**If you find skills bypassing MCP**, immediately:
+1. Notify the user (human): "This skill bypasses MCP protocol"
+2. Explain the correct pattern
+3. Offer to fix it by rewriting the skill as an MCP orchestrator
+
+### MCP Tools Available
+
+Current MCP tools in `execution/mcp_tools/`:
+- **todo_tools.py**: add_todo, list_todos, update_todo, complete_todo, delete_todo
+- **reminder_tools.py**: create_reminder, list_reminders, cancel_reminder
+- **mindmap_tools.py**: create_mindmap, list_mindmaps, add_mindmap_node, export_mindmap
+
+**Before creating a new skill**, check if MCP tools exist for the data operations needed.
+**If MCP tools don't exist**, create them in `execution/mcp_tools/` first, then create the skill.
+
 ## Operating Principles
 
 ++1. Check for tools first++  
